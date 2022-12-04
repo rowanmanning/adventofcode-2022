@@ -1,0 +1,46 @@
+{
+  "name": "@rowanmanning/adventofcode-2022",
+  "version": "0.0.0",
+  "private": true,
+  "engines": {
+    "node": "18.x",
+    "npm": "9.x"
+  },
+  "volta": {
+    "node": "18.12.1",
+    "npm": "9.1.3"
+  },
+  "workspaces": [
+    "solutions/*"
+  ],
+  "scripts": {
+    "verify": "npm run verify:eslint && npm run verify:types",
+    "verify:eslint": "eslint .",
+    "verify:types": "tsc --noEmit --project ./jsconfig.json",
+    "test": "npm run test:coverage",
+    "test:unit": "mocha '**/test/**/*.test.js'",
+    "test:coverage": "nyc npm run test:unit"
+  },
+  "devDependencies": {
+    "@rowanmanning/eslint-config": "^5.0.2",
+    "chai": "^4.3.7",
+    "eslint": "^8.29.0",
+    "mocha": "^10.1.0",
+    "nyc": "^15.1.0",
+    "testdouble": "^3.16.8",
+    "typescript": "^4.9.3"
+  },
+  "nyc": {
+    "eager": true,
+    "reporter": [
+      "html",
+      "text"
+    ]
+  },
+  "mocha": {
+    "ignore": [
+      "node_modules/**"
+    ],
+    "timeout": 10000
+  }
+}
