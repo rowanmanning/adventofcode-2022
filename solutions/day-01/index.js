@@ -1,28 +1,49 @@
 'use strict';
 
 exports.solution1 = function solution1(input) {
-	return Math.max(
-		...input
-			.split('\n\n')
-			.map(elf => {
-				return elf
-					.split('\n')
-					.reduce(sum);
-			})
-	);
+	return getTotalCaloriesPerElf(input).shift();
 };
 
-exports.solution2 = function solution2() {
-
+exports.solution2 = function solution2(input) {
+	return getTotalCaloriesPerElf(input).slice(0, 3).reduce(sum);
 };
+
+/**
+ * Get the total calories each elf holds.
+ *
+ * @param {string} input - A text representation of the elf calories.
+ * @returns {Array<number>} - Returns the total calories each elf has, sorted by most to least.
+ */
+function getTotalCaloriesPerElf(input) {
+	return input
+		.split('\n\n')
+		.map(elf => {
+			return elf
+				.split('\n')
+				.map(Number)
+				.reduce(sum);
+		})
+		.sort(sortDescending);
+}
 
 /**
  * Add two numbers together.
  *
- * @param {string | number} number1 - The first number.
- * @param {string | number} number2 - The number to add to the first.
+ * @param {number} number1 - The first number.
+ * @param {number} number2 - The number to add to the first.
  * @returns {number} - Returns the result of the sum.
  */
 function sum(number1, number2) {
-	return Number(number1) + Number(number2);
+	return number1 + number2;
+}
+
+/**
+ * A simple sort function for sorting in descending order.
+ *
+ * @param {any} value1 - The first value to compare.
+ * @param {any} value2 - The second value to compare.
+ * @returns {number} - Returns the result of the comparison.
+ */
+function sortDescending(value1, value2) {
+	return value2 - value1;
 }

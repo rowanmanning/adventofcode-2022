@@ -5,16 +5,16 @@ const {readFile} = require('node:fs/promises');
 
 const {solution1, solution2} = require('..');
 
-describe('solution', () => {
+describe('day 1', () => {
+	let exampleInput;
+	let puzzleInput;
 
-	describe('.solution1(input)', () => {
-		let exampleInput;
-		let puzzleInput;
+	before(async () => {
+		exampleInput = await readFile(`${__dirname}/fixtures/example-input.txt`, 'utf-8');
+		puzzleInput = await readFile(`${__dirname}/fixtures/puzzle-input.txt`, 'utf-8');
+	});
 
-		before(async () => {
-			exampleInput = await readFile(`${__dirname}/fixtures/example-input.txt`, 'utf-8');
-			puzzleInput = await readFile(`${__dirname}/fixtures/puzzle-input.txt`, 'utf-8');
-		});
+	describe('solution 1', () => {
 
 		describe('with test data', () => {
 
@@ -34,13 +34,23 @@ describe('solution', () => {
 
 	});
 
-	describe('.solution2(input)', () => {
+	describe('solution 2', () => {
 
-		beforeEach(() => {
-			solution2();
+		describe('with test data', () => {
+
+			it('returns the expected result', () => {
+				assert.deepEqual(solution2(exampleInput), 45000);
+			});
+
 		});
 
-		it('has tests');
+		describe('with puzzle input', () => {
+
+			it('returns the expected result', () => {
+				assert.deepEqual(solution2(puzzleInput), 193697);
+			});
+
+		});
 
 	});
 
