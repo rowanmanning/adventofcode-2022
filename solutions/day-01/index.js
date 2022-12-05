@@ -1,5 +1,7 @@
 'use strict';
 
+const {sum} = require('@rowanmanning/adventofcode-math');
+
 exports.solution1 = function solution1(input) {
 	return getTotalCaloriesPerElf(input).shift();
 };
@@ -24,17 +26,6 @@ function getTotalCaloriesPerElf(input) {
 				.reduce(sum);
 		})
 		.sort(sortDescending);
-}
-
-/**
- * Add two numbers together.
- *
- * @param {number} number1 - The first number.
- * @param {number} number2 - The number to add to the first.
- * @returns {number} - Returns the result of the sum.
- */
-function sum(number1, number2) {
-	return number1 + number2;
 }
 
 /**
