@@ -29,7 +29,7 @@ exports.solution2 = function solution2(input) {
  * Parse an input string.
  *
  * @param {string} input - The raw input.
- * @returns {{procedure: ProcedureStep[], supplyArea: SupplyArea}}
+ * @returns {{procedure: ProcedureStep[], supplyArea: SupplyArea}} - Returns the procedure stacks.
  */
 function parseInput(input) {
 	const [crateStacks, procedure] = input.split('\n\n');
