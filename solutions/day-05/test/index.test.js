@@ -14,12 +14,12 @@ describe('day 5', () => {
 		puzzleInput = await readFile(`${__dirname}/fixtures/puzzle-input.txt`, 'utf-8');
 	});
 
-	describe.skip('solution 1', () => {
+	describe('solution 1', () => {
 
 		describe('with test data', () => {
 
 			it('returns the expected result', () => {
-				assert.strictEqual(solution1(exampleInput), 0);
+				assert.strictEqual(solution1(exampleInput), 'CMZ');
 			});
 
 		});
@@ -27,19 +27,19 @@ describe('day 5', () => {
 		describe('with puzzle input', () => {
 
 			it('returns the expected result', () => {
-				assert.strictEqual(solution1(puzzleInput), 0);
+				assert.strictEqual(solution1(puzzleInput), 'JRVNHHCSJ');
 			});
 
 		});
 
 	});
 
-	describe.skip('solution 2', () => {
+	describe('solution 2', () => {
 
 		describe('with test data', () => {
 
 			it('returns the expected result', () => {
-				assert.deepEqual(solution2(exampleInput), 0);
+				assert.deepEqual(solution2(exampleInput), 'MCD');
 			});
 
 		});
@@ -47,7 +47,7 @@ describe('day 5', () => {
 		describe('with puzzle input', () => {
 
 			it('returns the expected result', () => {
-				assert.deepEqual(solution2(puzzleInput), 0);
+				assert.deepEqual(solution2(puzzleInput), 'GNFBSBJLH');
 			});
 
 		});
