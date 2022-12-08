@@ -5,7 +5,7 @@ const {readFile} = require('node:fs/promises');
 
 const {solution1, solution2} = require('..');
 
-describe.only('day 7', () => {
+describe('day 7', () => {
 	let exampleInput;
 	let puzzleInput;
 
